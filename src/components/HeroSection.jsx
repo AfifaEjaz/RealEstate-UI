@@ -1,4 +1,4 @@
-import React from "react";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
@@ -11,17 +11,32 @@ const HeroSection = () => {
               "url('https://realestatereacttailwind.netlify.app/assets/hero1-CiouO6zv.webp')",
           }}
         >
-          <h1 className="text-6xl text-white font-semibold lg:pr-[500px]">
+          <motion.h1
+            initial={{ opacity: 0, scale: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+            className="text-6xl text-white font-semibold lg:pr-[500px]"
+          >
             Find your next Home in Las Vegas
-          </h1>
-          <p className="text-white text-xl lg:pr-[500px]">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, scale: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+            className="text-white text-xl lg:pr-[500px]"
+          >
             Through our proprietary platform, WpResidence is changing how agents
             and clients navigate the process of finding or selling a home.
-          </p>
+          </motion.p>
         </section>
       </div>
-      <div className="flex justify-center items-center relative">
-        <div className="w-full lg:w-[70%] grid grid-cols-1 lg:grid-cols-4 justify-center items-center gap-6 uppercase font-semibold bg-white p-8 rounded-xl lg:absolute lg:z-10 lg:-bottom-13">
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+        className="flex justify-center items-center relative"
+      >
+        <div className="w-full lg:w-[70%] grid grid-cols-1 lg:grid-cols-4 justify-center items-center gap-6 uppercase font-semibold bg-white dark:bg-gray-900 dark:text-white p-8 rounded-xl lg:absolute lg:z-10 lg:-bottom-13">
           <div className="uppercase">
             <h1>location</h1>
             <input
@@ -52,7 +67,7 @@ const HeroSection = () => {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

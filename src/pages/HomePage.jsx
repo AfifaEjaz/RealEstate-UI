@@ -6,6 +6,8 @@ import About from "../components/About";
 import Areas from "../components/Areas";
 import Properties from "../components/Properties";
 import Services from "../components/Services";
+import Testimonials from "../components/Testimonials";
+import Contact from "../components/Contact";
 
 const HomePage = ({ theme }) => {
   return (
@@ -16,6 +18,8 @@ const HomePage = ({ theme }) => {
       <Areas/>
       <Properties/>
       <Services/>
+      <Testimonials/>
+      <Contact/>
       <Footer />
     </>
   );

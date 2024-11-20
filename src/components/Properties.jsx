@@ -8,6 +8,7 @@ import { IoAdd } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaVideo } from "react-icons/fa";
 import { FaCamera } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Properties = () => {
   const properties = [
@@ -19,7 +20,7 @@ const Properties = () => {
       description:
         "Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood",
       owner: "Alice Adams",
-      location : "6Downtown, Las Vegas"
+      location: "6Downtown, Las Vegas",
     },
     {
       image:
@@ -28,8 +29,8 @@ const Properties = () => {
       price: "$ 213.23",
       description:
         "Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood",
-        owner: "Drew Alice",
-        location : "6Downtown, Las Vegas"
+      owner: "Drew Alice",
+      location: "6Downtown, Las Vegas",
     },
     {
       image:
@@ -38,8 +39,8 @@ const Properties = () => {
       price: "$ 213.23",
       description:
         "Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood",
-        owner: "Fursi Bam",
-        location : "6Downtown, Las Vegas"
+      owner: "Fursi Bam",
+      location: "6Downtown, Las Vegas",
     },
     {
       image:
@@ -48,8 +49,8 @@ const Properties = () => {
       price: "$ 213.23",
       description:
         "Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood",
-        owner: "Neon Alice",
-        location : "6Downtown, Las Vegas"
+      owner: "Neon Alice",
+      location: "6Downtown, Las Vegas",
     },
     {
       image:
@@ -58,8 +59,8 @@ const Properties = () => {
       price: "$ 213.23",
       description:
         "Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood",
-        owner: "Firari Alice",
-        location : "6Downtown, Las Vegas"
+      owner: "Firari Alice",
+      location: "6Downtown, Las Vegas",
     },
     {
       image:
@@ -68,26 +69,34 @@ const Properties = () => {
       price: "$ 213.23",
       description:
         "Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood",
-        owner: "Jordan Bram",
-        location : "6Downtown, Las Vegas"
+      owner: "Jordan Bram",
+      location: "6Downtown, Las Vegas",
     },
   ];
 
   return (
     <>
-      <div className="bg-baby-pink">
+      <div className="bg-baby-pink dark:bg-black">
         <section className="lg:w-[90%] m-auto lg:px-20 px-6 py-20 w-full flex flex-col justify-center items-start gap-10">
           <div className="flex flex-col justify-center items-start gap-4">
             <h1 className="uppercase text-red-500 dark:text-white aos-init aos-animate">
               Properties
             </h1>
-            <h1 className="text-black text-4xl font-semibold leading-10 dark:text-white aos-init aos-animate">
+            <motion.h1
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+              className="text-black text-4xl font-semibold leading-10 dark:text-white aos-init aos-animate"
+            >
               Explore the latest <br /> properties available
-            </h1>
+            </motion.h1>
           </div>
           <div className="w-full grid lg:grid-cols-3 grid-cols-1 justify-center items-center gap-8">
             {properties.map((property, key) => (
-              <div
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
                 className="bg-white dark:bg-gray-800 rounded-xl w-full"
                 key={key}
               >
@@ -96,15 +105,27 @@ const Properties = () => {
                   style={{ backgroundImage: `url('${property.image}')` }}
                 >
                   <div className="flex justify-between items-end w-full">
-                    <button className="px-3 py-1 bg-red-600 hover:bg-white hover:text-black text-white rounded-full text-[13px]">Featured</button>
+                    <button className="px-3 py-1 bg-red-600 hover:bg-white hover:text-black text-white rounded-full text-[13px]">
+                      Featured
+                    </button>
                     <div className="flex justify-between items-center gap-3">
-                      <button className="px-3 py-1 bg-red-600 hover:bg-white hover:text-black text-white rounded-full text-[13px]">Sales</button>
-                      <button className="px-3 py-1 bg-red-600 hover:bg-white hover:text-black text-white rounded-full text-[13px]">Active</button>
+                      <button className="px-3 py-1 bg-red-600 hover:bg-white hover:text-black text-white rounded-full text-[13px]">
+                        Sales
+                      </button>
+                      <button className="px-3 py-1 bg-red-600 hover:bg-white hover:text-black text-white rounded-full text-[13px]">
+                        Active
+                      </button>
                     </div>
                   </div>
                   <div className="flex justify-between items-end w-full">
-                    <div className="flex justify-start items-center gap-2"><FaLocationDot/><span>{property.location}</span></div>
-                    <div className="flex justify-center items-center gap-4"><FaVideo/><FaCamera/></div>
+                    <div className="flex justify-start items-center gap-2">
+                      <FaLocationDot />
+                      <span>{property.location}</span>
+                    </div>
+                    <div className="flex justify-center items-center gap-4">
+                      <FaVideo />
+                      <FaCamera />
+                    </div>
                   </div>
                 </div>
                 <div className="px-6 py-3 flex flex-col justify-center items-start gap-2 w-full">
@@ -131,17 +152,23 @@ const Properties = () => {
                   </div>
                   <div className="flex justify-between items-center w-full border-t-2 border-black-300 py-3 mt-6">
                     <div className="flex justify-center items-center gap-2">
-                      <FaRegCircleUser color="red"/>
-                      <span className="ark:text-white">{property.owner}</span>
+                      <FaRegCircleUser color="red" />
+                      <span className="dark:text-white">{property.owner}</span>
                     </div>
                     <div className="flex justify-center items-center gap-4">
-                      <div className="p-2 border-2 border-gray-200 hover:bg-black cursor-pointer transform hover:scale-110 transition-transform duration-300"><FaShareAlt color="red"/></div>
-                      <div className="p-2 border-2 border-gray-200 hover:bg-black cursor-pointer transform hover:scale-110 transition-transform duration-300"><FaHeart color="red"/></div>
-                      <div className="p-2 border-2 border-gray-200 hover:bg-black cursor-pointer transform hover:scale-110 transition-transform duration-300"><IoAdd color="red"/></div>
+                      <div className="p-2 border-2 border-gray-200 hover:bg-black cursor-pointer transform hover:scale-110 transition-transform duration-300">
+                        <FaShareAlt color="red" />
+                      </div>
+                      <div className="p-2 border-2 border-gray-200 hover:bg-black cursor-pointer transform hover:scale-110 transition-transform duration-300">
+                        <FaHeart color="red" />
+                      </div>
+                      <div className="p-2 border-2 border-gray-200 hover:bg-black cursor-pointer transform hover:scale-110 transition-transform duration-300">
+                        <IoAdd color="red" />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
 
             <div></div>

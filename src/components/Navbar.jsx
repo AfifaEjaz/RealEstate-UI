@@ -39,32 +39,32 @@ const Navbar = ({theme}) => {
           </a>
           <nav className="flex items-center">
             <ul className="lg:flex gap-8 hidden justify-center items-center w-full text-black dark:text-white text-base font-semibold uppercase">
-              <li className="py-2 px-3">
+              <li className="py-2 px-3 hover:bg-red-500 rounded-xl">
                 <NavLink to="/" className="">
                   Home
                 </NavLink>
               </li>
-              <li className="py-2 px-3">
+              <li className="py-2 px-3 hover:bg-red-500 rounded-xl">
                 <NavLink to="/about" className="">
                   About
                 </NavLink>
               </li>
-              <li className="py-2 px-3">
+              <li className="py-2 px-3 hover:bg-red-500 rounded-xl">
                 <NavLink to="/about" className="">
                   Properties
                 </NavLink>
               </li>
-              <li className="py-2 px-3">
+              <li className="py-2 px-3 hover:bg-red-500 rounded-xl">
                 <NavLink to="/about" className="">
                   Services
                 </NavLink>
               </li>
-              <li className="py-2 px-3">
+              <li className="py-2 px-3 hover:bg-red-500 rounded-xl">
                 <NavLink to="/about" className="">
                   Testimonials
                 </NavLink>
               </li>
-              <li className="py-2 px-3">
+              <li className="py-2 px-3 hover:bg-red-500 rounded-xl">
                 <NavLink to="/about" className="">
                   Contact
                 </NavLink>
